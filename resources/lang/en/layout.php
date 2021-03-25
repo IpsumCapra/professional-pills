@@ -2,7 +2,7 @@
 
 return [
     // Metadata
-    'description' => 'The brand new RegattaTracker deluxe tracking system',
+    'description' => 'The professional pills experimental vaccinations platform.',
 
     // Layout header
     'header.admin.home' => 'Admin',
