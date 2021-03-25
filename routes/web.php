@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 // Home page
@@ -7,7 +8,8 @@ Route::view('/', 'home')->name('home');
 
 // Normal routes
 Route::middleware('auth')->group(function () {
-
+    // Auth logout
+    Route::get('/auth/logout', [AuthController::class, 'logout'])->name('auth.logout');
 });
 
 // Admin routes
