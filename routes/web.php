@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\SettingsController;
 use Illuminate\Support\Facades\Route;
 
 // Home page
@@ -8,6 +9,11 @@ Route::view('/', 'home')->name('home');
 
 // Normal routes
 Route::middleware('auth')->group(function () {
+    // Settings
+    Route::view('/settings', 'settings')->name('settings');
+    Route::post('/settings/change_details', [SettingsController::class, 'changeDetails'])->name('settings.change_details');
+    Route::post('/settings/change_password', [SettingsController::class, 'changePassword'])->name('settings.change_password');
+
     // Auth logout
     Route::get('/auth/logout', [AuthController::class, 'logout'])->name('auth.logout');
 });

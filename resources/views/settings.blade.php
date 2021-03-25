@@ -5,7 +5,7 @@
 @section('content')
     <div class="breadcrumb">
         <ul>
-            <li><a href="/">RegattaTracker</a></li>
+            <li><a href="/">Professional Pills</a></li>
             <li class="is-active"><a href="{{ route('settings') }}">@lang('settings.breadcrumb')</a></li>
         </ul>
     </div>
@@ -196,7 +196,7 @@
                     <div class="control">
                         <div class="select is-fullwidth @error('country') is-danger @enderror">
                             <select id="country" name="country" required>
-                                @foreach ($countries as $country)
+                                @foreach (\App\Models\User::COUNTRIES as $country)
                                     <option {{ $country == old('country', Auth::user()->country) ? 'selected' : '' }} value="{{ $country }}">{{ $country }}</option>
                                 @endforeach
                             </select>
