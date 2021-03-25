@@ -1,20 +1,34 @@
 <?php
 
 return [
+    // Auth login page
+    'login.title' => 'Login',
+    'login.breadcrumb' => 'Login',
+    'login.header' => 'Login',
+    'login.email' => 'Email address',
+    'login.password' => 'Password',
+    'login.button' => 'Login',
+    'login.error' => 'Incorrect email or password',
 
-    /*
-    |--------------------------------------------------------------------------
-    | Authentication Language Lines
-    |--------------------------------------------------------------------------
-    |
-    | The following language lines are used during authentication for various
-    | messages that we need to display to the user. You are free to modify
-    | these language lines according to your application's requirements.
-    |
-    */
-
-    'failed' => 'These credentials do not match our records.',
-    'password' => 'The provided password is incorrect.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-
+    // Auth register page
+    'register.title' => 'Register',
+    'register.breadcrumb' => 'Register',
+    'register.header' => 'Register',
+    'register.firstname' => 'First name',
+    'register.insertion' => 'Insertion',
+    'register.lastname' => 'Last name',
+    'register.gender' => 'Gender',
+    'register.gender_male' => 'Male',
+    'register.gender_female' => 'Female',
+    'register.gender_other' => 'Other',
+    'register.birthday' => 'Birthday',
+    'register.email' => 'Email address',
+    'register.phone' => 'Phone',
+    'register.address' => 'Address (street with house number)',
+    'register.postcode' => 'Postcode',
+    'register.city' => 'City',
+    'register.country' => 'Country',
+    'register.password' => 'Password',
+    'register.password_confirmation' => 'Confirm password',
+    'register.button' => 'Register'
 ];
