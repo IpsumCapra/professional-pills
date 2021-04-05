@@ -18,9 +18,12 @@ class User extends Authenticatable
     const GENDER_FEMALE = 1;
     const GENDER_OTHER = 2;
 
-    // A user can be normal or an admin
+    // Several user roles.
     const ROLE_NORMAL = 0;
     const ROLE_ADMIN = 1;
+    const ROLE_MD = 2;
+    const ROLE_LOGISTIC = 3;
+    const ROLE_RND = 4;
 
     /**
      * The attributes that are mass assignable.
