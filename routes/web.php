@@ -20,7 +20,18 @@ Route::middleware('auth')->group(function () {
 
 // Admin routes
 Route::middleware('admin')->group(function () {
+    // Admin home
+    Route::view('/admin', 'admin.home')->name('admin.home');
 
+    // Admin user routes
+    Route::get('/admin/users', [AdminUsersController::class, 'index'])->name('admin.users.index');
+    Route::view('/admin/users/create', 'admin.users.create')->name('admin.users.create');
+    Route::post('/admin/users', [AdminUsersController::class, 'store'])->name('admin.users.store');
+    Route::get('/admin/users/{user}/hijack', [AdminUsersController::class, 'hijack'])->name('admin.users.hijack');
+    Route::get('/admin/users/{user}/edit', [AdminUsersController::class, 'edit'])->name('admin.users.edit');
+    Route::get('/admin/users/{user}/delete', [AdminUsersController::class, 'delete'])->name('admin.users.delete');
+    Route::get('/admin/users/{user}', [AdminUsersController::class, 'show'])->name('admin.users.show');
+    Route::post('/admin/users/{user}', [AdminUsersController::class, 'update'])->name('admin.users.update');
 });
 
 // Guest routes

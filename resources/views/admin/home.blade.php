@@ -12,7 +12,7 @@
 
     <h1 class="title">@lang('admin/home.header')</h1>
 
-{{--    <div class="buttons">--}}
-{{--        <a class="button" href="{{ route('admin.users.index') }}">@lang('admin/home.users')</a>--}}
-{{--    </div>--}}
+    <div class="buttons">
+        <a class="button" href="{{ route('admin.users.index') }}">@lang('admin/home.users')</a>
+    </div>
 @endsection
