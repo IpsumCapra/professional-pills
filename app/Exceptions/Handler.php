@@ -35,7 +35,7 @@ class Handler extends ExceptionHandler
      */
     public function register()
     {
-        $this->reportable(function (MethodNotAllowedHttpException $e) {
+        $this->renderable(function (MethodNotAllowedHttpException $e, $request) {
             return response()->json([
                'error'=>'Method not allowed'
             ], 400);
