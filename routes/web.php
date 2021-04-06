@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminHospitalsController;
-use App\Http\Controllers\Admin\AdminUsersController;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\Api\Admin\AdminHospitalsController;
+use App\Http\Controllers\Api\Admin\AdminUsersController;
+use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\SettingsController;
 use Illuminate\Support\Facades\Route;
 
 // Home page
