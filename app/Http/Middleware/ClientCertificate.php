@@ -17,7 +17,7 @@ class ClientCertificate
      */
     public function handle(Request $request, Closure $next, $guard = null)
     {
-        return $request->server('SSL_CLIENT_VERIFY');
+        return $request;
 
         if ($this->auth->guard($guard)->check()) {
             return $next($request);
