@@ -17,6 +17,7 @@ class CreateDeliveriesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('destination');
             $table->string('contents');
+            $table->unsignedInteger('quantity');
             $table->timestamps();
 
             $table->foreign('destination')

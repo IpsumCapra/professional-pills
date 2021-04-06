@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Delivery;
 use App\Models\Hospital;
 use App\Models\Research;
 use Faker\Factory;
@@ -18,6 +19,8 @@ class DatabaseSeeder extends Seeder
     {
         \App\Models\Hospital::factory(20)->create();
         \App\Models\User::factory(100)->create();
+
+        \App\Models\Delivery::factory(50)->create();
 
         \App\Models\User::all()->each(function ($user) {
             // Get the hospitals in a province.
