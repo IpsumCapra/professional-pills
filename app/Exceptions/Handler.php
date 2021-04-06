@@ -40,8 +40,5 @@ class Handler extends ExceptionHandler
                'error'=>'Method not allowed'
             ], 400);
         });
-        $this->reportable(function (Throwable $e) {
-            //
-        });
     }
 }
