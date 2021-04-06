@@ -16,7 +16,7 @@
 
     <h1 class="title">@lang('admin/hospitals.edit.header')</h1>
 
-    <form method="POST" action="{{ route('admin.hospitals.update', $user) }}">
+    <form method="POST" action="{{ route('admin.hospitals.update', $hospital) }}">
         @csrf
 
         <div class="field">
