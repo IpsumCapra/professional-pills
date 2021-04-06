@@ -22,6 +22,7 @@ class ResearchFactory extends Factory
     public function definition()
     {
         return [
+
             'placebo' => $this->faker->boolean()
         ];
     }

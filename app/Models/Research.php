@@ -10,6 +10,7 @@ class Research extends Model
     use HasFactory;
 
     protected $fillable = [
+        'patient_id',
         'successful',
         'placebo'
     ];
