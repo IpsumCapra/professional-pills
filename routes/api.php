@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\Api\ApiDeliveryController;
+use App\Http\Controllers\Api\ApiHospitalController;
+use App\Http\Controllers\Api\ApiPatientController;
+use App\Http\Controllers\Api\ApiPatientLocationController;
+use App\Http\Controllers\Api\ApiResearchController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
