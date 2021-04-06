@@ -75,6 +75,11 @@ class User extends Authenticatable
         }
     }
 
+    // User has many hospitals.
+    public function hospitals() {
+        return $this->hasMany(Hospital::class);
+    }
+
     // Return a sort function to sort user by sort name (lastname, insertion firstname)
     public static function sortByName()
     {
