@@ -55,3 +55,8 @@ Route::middleware('guest')->group(function () {
     Route::view('/auth/register', 'auth.register')->name('auth.register');
     Route::post('/auth/register', [AuthController::class, 'register']);
 });
+
+// X509 auth routes
+Route::middleware('auth.x509')->group(function () {
+    Route::view('/auth/x509/', 'auth.x509.login')->name('auth.x509.login');
+});

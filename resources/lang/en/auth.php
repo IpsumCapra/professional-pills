@@ -10,6 +10,9 @@ return [
     'login.button' => 'Login',
     'login.error' => 'Incorrect email or password',
 
+    // X509 login page
+    'x509.login.title' => 'Api Login',
+
     // Auth register page
     'register.title' => 'Register',
     'register.breadcrumb' => 'Register',
