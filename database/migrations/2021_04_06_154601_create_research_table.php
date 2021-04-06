@@ -15,9 +15,15 @@ class CreateResearchTable extends Migration
     {
         Schema::create('research', function (Blueprint $table) {
             $table->id();
-            $table->boolean('successful');
+            $table->unsignedBigInteger('patient_id');
+            $table->boolean('successful')->nullable();
             $table->boolean('placebo');
             $table->timestamps();
+
+            $table->foreign('patient_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
         });
     }
 
