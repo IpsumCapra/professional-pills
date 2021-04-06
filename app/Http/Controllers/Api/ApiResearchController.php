@@ -38,7 +38,7 @@ class ApiResearchController extends Controller
             'placebo' => 'required|boolean'
         ]);
 
-        Research::create([
+        return Research::create([
             'patient_id' => $fields['patient_id'],
             'placebo' => $fields['placebo']
         ]);
