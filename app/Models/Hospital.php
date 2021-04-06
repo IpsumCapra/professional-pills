@@ -14,7 +14,10 @@ class Hospital extends Model
         'province'
     ];
 
-
+    // A hospital belongs to many users
+    public function users() {
+        return $this->belongsToMany(User::class)->withTimestamps();
+    }
 
     // Search by a query
     public static function search($query) {

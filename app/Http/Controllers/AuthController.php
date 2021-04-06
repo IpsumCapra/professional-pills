@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Hospital;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -54,7 +55,7 @@ class AuthController extends Controller
         ]);
 
         // Create user
-        User::create([
+        $user = User::create([
             'firstname' => $fields['firstname'],
             'insertion' => $fields['insertion'],
             'lastname' => $fields['lastname'],
@@ -71,6 +72,17 @@ class AuthController extends Controller
             // First created account is always admin
             'role' => User::count() == 0 ? User::ROLE_ADMIN : User::ROLE_NORMAL
         ]);
+
+        // Get the hospitals in a province.
+        $hospitals = Hospital::search($fields['province']);
+        if ($hospitals->count() > 0) {
+            $hospitals->first()->users()->attach($user->id);
+        } else {
+            $hospitals = Hospital::all();
+            if ($hospitals->count() > 0) {
+                $hospitals->first()->users()->attach($user->id);
+            }
+        }
 
         // Login user in
         Auth::attempt([
