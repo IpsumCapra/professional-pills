@@ -27,6 +27,17 @@
                 </div>
                 <div class="navbar-menu">
                     @auth
+                        <div class="navbar-start">
+                            @if (Auth::user()->role == App\Models\User::ROLE_ADMIN)
+                                <div class="navbar-item has-dropdown is-hoverable">
+                                    <a class="navbar-link is-arrowless" href="{{ route('admin.home') }}">@lang('layout.header.admin.home')</a>
+                                    <div class="navbar-dropdown">
+                                        <a class="navbar-item" href="{{ route('admin.users.index') }}">@lang('layout.header.admin.users')</a>
+                                    </div>
+                                </div>
+                            @endif
+                        </div>
+
                         <div class="navbar-end">
                             <div class="navbar-item" style="display: flex; align-items: center;">
                                 <span>{{ Auth::user()->name() }}</span>
