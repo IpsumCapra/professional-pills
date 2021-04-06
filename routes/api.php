@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 // MD routes
 Route::get('patients', [ApiPatientController::class, 'index']);
 Route::get('patients/{patient}', [ApiPatientController::class, 'show']);
-Route::post('research', [ApiResearchController::class, 'store']);
+Route::patch('research/{entry}', [ApiResearchController::class, 'update']);
 
 // Logistic routes
 Route::get('patient_locs', [ApiPatientLocationController::class, 'index']);
