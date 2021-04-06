@@ -27,7 +27,7 @@ class CreateUsersTable extends Migration
             $table->string('address');
             $table->string('postcode');
             $table->string('city');
-            $table->string('country');
+            $table->string('province');
             $table->string('password');
             $table->rememberToken();
             $table->tinyInteger('role')->default(User::ROLE_NORMAL);
