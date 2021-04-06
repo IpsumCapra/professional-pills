@@ -17,7 +17,7 @@ class ClientCertificate
      */
     public function handle(Request $request, Closure $next, $guard = null)
     {
-        return $request;
+        return "test";
 
         if ($this->auth->guard($guard)->check()) {
             return $next($request);
