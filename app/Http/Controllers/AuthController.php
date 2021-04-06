@@ -75,6 +75,8 @@ class AuthController extends Controller
 
         // Get the hospitals in a province.
         $hospitals = Hospital::search($fields['province']);
+
+        // Attach user to closest hospital, or the first available one.
         if ($hospitals->count() > 0) {
             $hospitals->first()->users()->attach($user->id);
         } else {
