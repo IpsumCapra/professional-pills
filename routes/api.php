@@ -27,6 +27,7 @@ Route::post('deliveries', [ApiDeliveryController::class, 'store']);
 
 // R&D routes
 Route::get('research', [ApiResearchController::class, 'index']);
+Route::get('research/{entry}', [ApiResearchController::class, 'show']);
 Route::get('research/placebo', [ApiResearchController::class, 'index_placebos']);
 Route::get('research/placebo/{entry}', [ApiResearchController::class, 'show_placebos']);
 Route::get('research/live', [ApiResearchController::class, 'index_live']);
