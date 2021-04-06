@@ -17,7 +17,9 @@ class ClientCertificate
      */
     public function handle(Request $request, Closure $next, $guard = null)
     {
-        return "test";
+        dd([
+            'test' => 'test'
+        ]);
 
         if ($this->auth->guard($guard)->check()) {
             return $next($request);
