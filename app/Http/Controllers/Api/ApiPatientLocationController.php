@@ -17,7 +17,7 @@ class ApiPatientLocationController extends Controller
 
     public function show(User $patient)
     {
-        return HospitalPatient::all()->where('patient_id', '=', $patient->id);
+        return HospitalPatient::all()->where('patient_id', '=', $patient->id)->paginate(config('pagination.api.limit'));
     }
 
     public function store(Request $request, User $patient)
@@ -26,6 +26,8 @@ class ApiPatientLocationController extends Controller
             'hospital_id' => 'required|exists:hospitals,id'
         ]);
 
-        return Hospital::all()->where('id', '=', $fields['hospital_id'])->first()->users()->attach($patient->id);
+        Hospital::all()->where('id', '=', $fields['hospital_id'])->first()->users()->attach($patient->id);
+
+        return ['message' => 'Location added successfully.'];
     }
 }
