@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Hospital;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class HospitalFactory extends Factory
@@ -22,7 +23,8 @@ class HospitalFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->company . ' ' . $this->faker->randomElement(['Ziekenhuis', 'Gasthuis', 'Hostpital']),
+            'province' => $this->faker->randomElement(User::PROVINCES)
         ];
     }
 }
