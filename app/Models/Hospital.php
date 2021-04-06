@@ -16,7 +16,7 @@ class Hospital extends Model
 
     // A hospital belongs to many users
     public function users() {
-        return $this->belongsToMany(User::class)->withTimestamps();
+        return $this->belongsToMany(User::class, 'hospital_patients')->withTimestamps();
     }
 
     // Search by a query
