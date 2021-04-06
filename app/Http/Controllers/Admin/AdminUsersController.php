@@ -17,11 +17,12 @@ class AdminUsersController extends Controller
         // When a query is given search by query
         $query = request('q');
         if ($query != null) {
-            $users = User::search($query)->get()->sortBy(User::sortByName(), SORT_NATURAL | SORT_FLAG_CASE)
-                ->paginate(config('pagination.web.limit'))->withQueryString();;
+            $users = User::search($query)->get();
         } else {
-            $users = User::paginate(config('pagination.web.limit'))->withQueryString();;
+            $users = User::all();
         }
+        $users = $users->sortBy(User::sortByName(), SORT_NATURAL | SORT_FLAG_CASE)
+            ->paginate(config('pagination.web.limit'))->withQueryString();
 
         // Return admin users index view
         return view('admin.users.index', ['users' => $users]);
