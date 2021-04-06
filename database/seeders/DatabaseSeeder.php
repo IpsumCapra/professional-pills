@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
 
             $faker = Factory::create();
 
+            // Attach user to research.
             Research::create([
                 'patient_id' => $user->id,
                 'placebo' => $faker->boolean(),
