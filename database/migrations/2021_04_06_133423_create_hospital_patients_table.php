@@ -15,7 +15,22 @@ class CreateHospitalPatientsTable extends Migration
     {
         Schema::create('hospital_patients', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->unsignedBigInteger('hospital_id');
+            $table->unsignedSmallInteger('patient_id');
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
+
+            $table->unique(['hospital_id', 'patient_id']);
+
+            $table->foreign('hospital_id')
+                ->references('id')
+                ->on('hospitals')
+                ->onDelete('cascade');
+
+            $table->foreign('patient_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
         });
     }
 
