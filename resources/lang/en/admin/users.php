@@ -4,12 +4,12 @@ return [
     // Admin users index page
     'index.title' => 'Users - Admin',
     'index.breadcrumb' => 'Users',
-    'index.header' => 'All the users',
+    'index.header' => 'All users',
     'index.search_field' => 'Search for users...',
     'index.search_button' => 'Search',
     'index.role_normal' => 'NORMAL',
     'index.role_admin' => 'ADMIN',
-    'index.empty' => 'There are no users found',
+    'index.empty' => 'No users were found',
     'index.create' => 'Create new user',
 
     // Admin users create page

@@ -13,4 +13,12 @@ class Hospital extends Model
         'name',
         'province'
     ];
+
+
+
+    // Search by a query
+    public static function search($query) {
+        return static::where('name', 'LIKE', '%' . $query . '%')
+            ->orWhere('province', 'LIKE', '%' . $query . '%');
+    }
 }

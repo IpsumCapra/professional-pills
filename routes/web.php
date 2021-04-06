@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminHospitalsController;
 use App\Http\Controllers\Admin\AdminUsersController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SettingsController;
@@ -33,6 +34,15 @@ Route::middleware('admin')->group(function () {
     Route::get('/admin/users/{user}/delete', [AdminUsersController::class, 'delete'])->name('admin.users.delete');
     Route::get('/admin/users/{user}', [AdminUsersController::class, 'show'])->name('admin.users.show');
     Route::post('/admin/users/{user}', [AdminUsersController::class, 'update'])->name('admin.users.update');
+
+    // Admin hospital routes
+    Route::get('/admin/hospitals', [AdminHospitalsController::class, 'index'])->name('admin.hospitals.index');
+    Route::view('/admin/hospitals/create', 'admin.hospitals.create')->name('admin.hospitals.create');
+    Route::post('/admin/hospitals', [AdminHospitalsController::class, 'store'])->name('admin.hospitals.store');
+    Route::get('/admin/hospitals/{hospital}/edit', [AdminHospitalsController::class, 'edit'])->name('admin.hospitals.edit');
+    Route::get('/admin/hospitals/{hospital}/delete', [AdminHospitalsController::class, 'delete'])->name('admin.hospitals.delete');
+    Route::get('/admin/hospitals/{hospital}', [AdminHospitalsController::class, 'show'])->name('admin.hospitals.show');
+    Route::post('/admin/hospitals/{hospital}', [AdminHospitalsController::class, 'update'])->name('admin.hospitals.update');
 });
 
 // Guest routes
