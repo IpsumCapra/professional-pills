@@ -12,7 +12,7 @@ class ApiPatientController extends Controller
         return User::all()->paginate(config('pagination.api.limit'));
     }
 
-    public function show(User $user) {
-        return User::find($user);
+    public function show(User $patient) {
+        return $patient;
     }
 }
