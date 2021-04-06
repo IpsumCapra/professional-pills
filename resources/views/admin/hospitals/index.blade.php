@@ -43,6 +43,7 @@
                             <h2 class="title is-4">
                                 <a href="{{ route('admin.hospitals.show', $hospital) }}">{{ $hospital->name }}</a>
                             </h2>
+                            <p>{{$hospital->province}}</p>
                         </div>
                     </div>
                 @endforeach
