@@ -45,7 +45,7 @@ class AuthController extends Controller
             'gender' => 'required|integer|digits_between:' . User::GENDER_MALE . ',' . User::GENDER_OTHER,
             'birthday' => 'required|date',
             'email' => 'required|email|max:255|unique:users',
-            'phone' => 'nullable|integer|max:255',
+            'phone' => 'nullable|max:255',
             'address' => 'required|min:2|max:255',
             'postcode' => 'required|min:2|max:255',
             'city' => 'required|min:2|max:255',
