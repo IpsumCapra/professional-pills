@@ -22,6 +22,6 @@
         <p>@lang('admin/home.statistics.hospital_amount'): {{\App\Models\Hospital::all()->count()}}</p>
         <p>@lang('admin/home.statistics.user_amount'): {{\App\Models\User::all()->count()}}</p>
         <h1 class="title">@lang('admin/home.log')</h1>
-        <pre>{{Illuminate\Support\Facades\Storage::disk('local')->get('/' . base_path() . '/storage/logs/laravel.log')}}</pre>
+        <pre>{{\Illuminate\Support\Facades\File::get(storage_path('logs/laravel.log'))}}</pre>
     </div>
 @endsection
