@@ -49,7 +49,7 @@ class AuthController extends Controller
             'address' => 'required|min:2|max:255',
             'postcode' => 'required|min:2|max:255',
             'city' => 'required|min:2|max:255',
-            'country' => 'required|min:2|max:255',
+            'province' => 'required|min:2|max:255',
             'password' => 'required|min:6|confirmed'
         ]);
 
@@ -65,7 +65,7 @@ class AuthController extends Controller
             'address' => $fields['address'],
             'postcode' => $fields['postcode'],
             'city' => $fields['city'],
-            'country' => $fields['country'],
+            'province' => $fields['province'],
             'password' => Hash::make($fields['password']),
 
             // First created account is always admin

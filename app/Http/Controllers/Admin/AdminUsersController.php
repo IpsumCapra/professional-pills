@@ -43,7 +43,7 @@ class AdminUsersController extends Controller
             'address' => 'required|min:2|max:255',
             'postcode' => 'required|min:2|max:255',
             'city' => 'required|min:2|max:255',
-            'country' => 'required|min:2|max:255',
+            'province' => 'required|min:2|max:255',
             'password' => 'required|min:6|confirmed',
             'role' => 'required|integer|digits_between:' . User::ROLE_NORMAL . ',' . User::ROLE_ADMIN
         ]);
@@ -60,7 +60,7 @@ class AdminUsersController extends Controller
             'address' => $fields['address'],
             'postcode' => $fields['postcode'],
             'city' => $fields['city'],
-            'country' => $fields['country'],
+            'province' => $fields['province'],
             'password' => Hash::make($fields['password']),
             'role' => $fields['role']
         ]);
@@ -114,7 +114,7 @@ class AdminUsersController extends Controller
             'address' => 'required|min:2|max:255',
             'postcode' => 'required|min:2|max:255',
             'city' => 'required|min:2|max:255',
-            'country' => 'required|min:2|max:255',
+            'province' => 'required|min:2|max:255',
             'role' => 'required|integer|digits_between:' . User::ROLE_NORMAL . ',' . User::ROLE_ADMIN
         ]);
 
@@ -130,7 +130,7 @@ class AdminUsersController extends Controller
             'address' => $fields['address'],
             'postcode' => $fields['postcode'],
             'city' => $fields['city'],
-            'country' => $fields['country'],
+            'province' => $fields['province'],
             'role' => $fields['role']
         ]);
 
