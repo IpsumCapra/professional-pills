@@ -16,8 +16,8 @@ Route::get('patients/{patient}', [ApiPatientController::class, 'show']);
 Route::patch('research/{entry}', [ApiResearchController::class, 'update']);
 
 // Logistic routes
-Route::get('patient_locs', [ApiPatientLocationController::class, 'index']);
-Route::get('patient_locs/{patient}', [ApiPatientLocationController::class, 'show']);
+Route::get('patientlocations', [ApiPatientLocationController::class, 'index']);
+Route::get('patientlocations/{patient}', [ApiPatientLocationController::class, 'show']);
 Route::get('hospitals', [ApiHospitalController::class, 'index']);
 Route::get('hospitals/{hospital}', [ApiHospitalController::class, 'show']);
 Route::post('patient_locs/{patient}', [ApiPatientLocationController::class, 'store']);
