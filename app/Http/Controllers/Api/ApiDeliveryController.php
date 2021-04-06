@@ -33,4 +33,11 @@ class ApiDeliveryController extends Controller
             'quantity' => $fields['quantity']
         ]);
     }
+
+    // Delete a delivery.
+    public function delete(Delivery $delivery) {
+        $delivery->delete();
+
+        return ['message' => 'Delivery deleted successfully.'];
+    }
 }

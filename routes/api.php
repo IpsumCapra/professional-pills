@@ -24,6 +24,7 @@ Route::post('patientlocations/{patient}', [ApiPatientLocationController::class, 
 Route::get('deliveries', [ApiDeliveryController::class, 'index']);
 Route::get('deliveries/{delivery}', [ApiDeliveryController::class, 'show']);
 Route::post('deliveries', [ApiDeliveryController::class, 'store']);
+Route::delete('deliveries/{delivery}', [ApiDeliveryController::class, 'delete']);
 
 // R&D routes
 Route::get('research', [ApiResearchController::class, 'index']);
