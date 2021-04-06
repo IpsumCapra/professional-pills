@@ -17,7 +17,7 @@ class ApiPatientLocationController extends Controller
 
     public function show(User $patient)
     {
-        return $patient->hospitals();
+        return HospitalPatient::all()->where('patient_id', '=', $patient->id);
     }
 
     public function store(Request $request, User $patient)
