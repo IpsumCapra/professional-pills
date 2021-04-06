@@ -12,6 +12,7 @@ class ApiPatientLocationController extends Controller
 {
     public function index()
     {
+        return "jjj";
         return HospitalPatient::all()->paginate(config('pagination.api.limit'));
     }
 
