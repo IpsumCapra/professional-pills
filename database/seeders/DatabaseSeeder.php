@@ -19,8 +19,6 @@ class DatabaseSeeder extends Seeder
         \App\Models\Hospital::factory(20)->create();
         \App\Models\User::factory(100)->create();
 
-        \App\Models\Research::factory(30)->create();
-
         \App\Models\User::all()->each(function ($user) {
             // Get the hospitals in a province.
             $hospitals = Hospital::search($user->province);
