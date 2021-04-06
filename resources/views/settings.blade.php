@@ -191,20 +191,20 @@
 
             <div class="column">
                 <div class="field">
-                    <label class="label" for="country">@lang('settings.country')</label>
+                    <label class="label" for="province">@lang('settings.province')</label>
 
                     <div class="control">
-                        <div class="select is-fullwidth @error('country') is-danger @enderror">
-                            <select id="country" name="country" required>
-                                @foreach (\App\Models\User::PROVINCES as $country)
-                                    <option {{ $country == old('country', Auth::user()->country) ? 'selected' : '' }} value="{{ $country }}">{{ $country }}</option>
+                        <div class="select is-fullwidth @error('province') is-danger @enderror">
+                            <select id="province" name="province" required>
+                                @foreach (\App\Models\User::PROVINCES as $province)
+                                    <option {{ $province == old('province', Auth::user()->province) ? 'selected' : '' }} value="{{ $province }}">{{ $province }}</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
 
-                    @error('country')
-                        <p class="help is-danger">{{ $errors->first('country') }}</p>
+                    @error('province')
+                        <p class="help is-danger">{{ $errors->first('province') }}</p>
                     @enderror
                 </div>
             </div>

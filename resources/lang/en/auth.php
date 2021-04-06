@@ -27,7 +27,7 @@ return [
     'register.address' => 'Address (street with house number)',
     'register.postcode' => 'Postcode',
     'register.city' => 'City',
-    'register.country' => 'Country',
+    'register.province' => 'Province',
     'register.password' => 'Password',
     'register.password_confirmation' => 'Confirm password',
     'register.button' => 'Register'

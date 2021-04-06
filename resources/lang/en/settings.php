@@ -20,7 +20,7 @@ return [
     'address' => 'Address (street with house number)',
     'postcode' => 'Postcode',
     'city' => 'City',
-    'country' => 'Country',
+    'province' => 'Province',
     'change_details_button' => 'Change details',
     'change_details_message' => 'Your details have changed',
 

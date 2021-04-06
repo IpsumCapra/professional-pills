@@ -47,7 +47,7 @@
 
         <h2 class="subtitle is-5">@lang('admin/users.show.address_info')</h2>
         <p>{{ $user->address }}</p>
-        <p>{{ $user->postcode }}, {{ $user->city }} {{ $user->country }}</p>
+        <p>{{ $user->postcode }}, {{ $user->city }} {{ $user->province }}</p>
 
         <div class="buttons">
             @if ($user->id != Auth::id())
