@@ -11,5 +11,8 @@ return [
     // Admin statistics
     'statistics' => 'Statistics',
     'statistics.hospital_amount' => 'Hospital amount',
-    'statistics.user_amount' => 'User amount'
+    'statistics.user_amount' => 'User amount',
+
+    //Admin logging
+    'log' => 'Log (laravel.log)'
 ];
