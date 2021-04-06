@@ -20,11 +20,11 @@
         @csrf
 
         <div class="field">
-            <label class="label" for="name">@lang('admin/hospitals.create.name')</label>
+            <label class="label" for="name">@lang('admin/hospitals.edit.name')</label>
 
             <div class="control">
                 <input class="input @error('name') is-danger @enderror" type="text" id="name" name="name"
-                       value="{{ old('name') }}" autofocus required>
+                       value="{{ old('name', $hospital->name) }}" autofocus required>
             </div>
 
             @error('name')
@@ -33,7 +33,7 @@
         </div>
 
         <div class="field">
-            <label class="label" for="province">@lang('admin/hospitals.create.province')</label>
+            <label class="label" for="province">@lang('admin/hospitals.edit.province')</label>
 
             <div class="control">
                 <div class="select is-fullwidth @error('province') is-danger @enderror">
