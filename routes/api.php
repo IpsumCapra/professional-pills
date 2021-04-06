@@ -21,8 +21,8 @@ Route::get('patientlocations/{patient}', [ApiPatientLocationController::class, '
 Route::get('hospitals', [ApiHospitalController::class, 'index']);
 Route::get('hospitals/{hospital}', [ApiHospitalController::class, 'show']);
 Route::post('patientlocations/{patient}', [ApiPatientLocationController::class, 'store']);
-Route::post('deliveries', [ApiDeliveryController::class, 'index']);
-Route::post('deliveries/{delivery}', [ApiDeliveryController::class, 'show']);
+Route::get('deliveries', [ApiDeliveryController::class, 'index']);
+Route::get('deliveries/{delivery}', [ApiDeliveryController::class, 'show']);
 Route::post('deliveries', [ApiDeliveryController::class, 'store']);
 
 // R&D routes
