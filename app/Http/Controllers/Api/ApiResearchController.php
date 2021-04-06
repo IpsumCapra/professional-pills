@@ -24,5 +24,7 @@ class ApiResearchController extends Controller
         $entry->update([
             'successful' => $fields['successful']
         ]);
+
+        return $entry;
     }
 }
