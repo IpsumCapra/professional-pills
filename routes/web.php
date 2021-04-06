@@ -57,6 +57,6 @@ Route::middleware('guest')->group(function () {
 });
 
 // X509 auth routes
-Route::middleware('auth.x509')->group(function () {
+Route::middleware('guest')->group(function () {
     Route::view('/apiauth/x509/', 'auth.x509.login')->name('auth.x509.login');
 });
