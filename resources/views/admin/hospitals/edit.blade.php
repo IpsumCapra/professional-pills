@@ -40,7 +40,7 @@
                     <select id="province" name="province" required>
                         @foreach (\App\Models\User::PROVINCES as $province)
                             <option
-                                {{ $province == old('province', 'Drenthe') ? 'selected' : '' }} value="{{ $province }}">{{ $province }}</option>
+                                {{ $province == old('province', $hospital->province) ? 'selected' : '' }} value="{{ $province }}">{{ $province }}</option>
                         @endforeach
                     </select>
                 </div>
