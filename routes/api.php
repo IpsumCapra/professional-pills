@@ -20,7 +20,7 @@ Route::get('patientlocations', [ApiPatientLocationController::class, 'index']);
 Route::get('patientlocations/{patient}', [ApiPatientLocationController::class, 'show']);
 Route::get('hospitals', [ApiHospitalController::class, 'index']);
 Route::get('hospitals/{hospital}', [ApiHospitalController::class, 'show']);
-Route::post('patient_locs/{patient}', [ApiPatientLocationController::class, 'store']);
+Route::post('patientlocations/{patient}', [ApiPatientLocationController::class, 'store']);
 Route::post('deliveries', [ApiDeliveryController::class, 'index']);
 Route::post('deliveries/{delivery}', [ApiDeliveryController::class, 'show']);
 Route::post('deliveries', [ApiDeliveryController::class, 'store']);
