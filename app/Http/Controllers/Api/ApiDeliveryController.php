@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Api\Api;
+namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Api\Controller;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class ApiDeliveryController extends Controller
