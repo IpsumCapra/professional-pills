@@ -5,7 +5,7 @@ use App\Http\Controllers\Api\ApiHospitalController;
 use App\Http\Controllers\Api\ApiPatientController;
 use App\Http\Controllers\Api\ApiPatientLocationController;
 use App\Http\Controllers\Api\ApiResearchController;
-use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Route;
 
 // TODO: API auth separation using x509.

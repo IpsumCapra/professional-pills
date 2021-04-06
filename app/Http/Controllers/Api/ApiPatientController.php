@@ -13,6 +13,6 @@ class ApiPatientController extends Controller
     }
 
     public function show(User $user) {
-        return $user;
+        return User::find($user);
     }
 }
