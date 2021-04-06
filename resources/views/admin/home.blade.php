@@ -16,4 +16,10 @@
         <a class="button" href="{{ route('admin.users.index') }}">@lang('admin/home.users')</a>
         <a class="button" href="{{ route('admin.hospitals.index') }}">@lang('admin/home.hospitals')</a>
     </div>
+
+    <div class="box content">
+        <h1 class="title">@lang('admin/home.statistics')</h1>
+        <p>@lang('admin/home.statistics.hospital_amount'): {{\App\Models\Hospital::all()->count()}}</p>
+        <p>@lang('admin/home.statistics.user_amount'): {{\App\Models\User::all()->count()}}</p>
+    </div>
 @endsection
