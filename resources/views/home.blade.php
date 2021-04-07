@@ -16,18 +16,17 @@
                 <div class="box content">
                     <h1 class="title">@lang('home.trials')</h1>
                     @foreach(Auth::user()->trials()->get()->toArray() as $trial)
-                        {{dd(['trial' => $trial->successful])}}
                         <div class="box content">
-                            <h1 class="title is-spaced is-4">@lang('home.trials.name', ['trial.id' => $trial->id])</h1>
-                            @if ($trial->successful === 1)
+                            <h1 class="title is-spaced is-4">@lang('home.trials.name', ['trial.id' => $trial['id']])</h1>
+                            @if ($trial['successful'] === 1)
                                 <span class="tag is-pulled-right is-success">@lang('home.trials.success')</span>
                             @endif
 
-                            @if ($trials->successful === 0)
+                            @if ($trial['successful'] === 0)
                                 <span class="tag is-pulled-right is-danger">@lang('home.trials.failure')</span>
                             @endif
 
-                            @if ($trials->successful === null)
+                            @if ($trial['successful'] === null)
                                 <span class="tag is-pulled-right is-warning">@lang('home.trials.pending')</span>
                             @endif
                         </div>
