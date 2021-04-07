@@ -12,7 +12,7 @@
                     <p>{{Auth::user()->hospitals()->first()->name}}</p>
                 </div>
             @endif
-            {{dd(['trials' => Auth::user()->trials()])}}
+            {{dd(['trials' => Auth::user()->trials()->count()])}}
 {{--            @if(Auth::user()->trials()->count() > 0)--}}
 {{--                <div class="box content">--}}
 {{--                    <h1 class="title">@lang('home.trials')</h1>--}}
