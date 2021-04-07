@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Hospital;
-use App\Models\User;
+use App\Models\ApiUser;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 use Session;
 
 class ApiAuthController extends Controller
@@ -14,13 +11,19 @@ class ApiAuthController extends Controller
     // Login route
     public function login(Request $request)
     {
+        dd($request);
         $division = $request->server('REDIRECT_SSL_CLIENT_S_DN_CN');
+
+
 
         switch ($division) {
             case 'MD':
 
         }
 
+        $user = ApiUser::create([
+
+        ]);
 
         $token = $user->createToken('auth_token');
 
