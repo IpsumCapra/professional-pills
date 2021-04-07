@@ -6,12 +6,13 @@
     <div class="content">
         @auth
             <h1 class="title">@lang('home.header_auth', ['user.firstname' => Auth::user()->firstname])</h1>
-            @if(Auth::user()->hospitals()->count() > 0)
-                <div class="box content">
-                    <h1 class="title">@lang('home.hospital')</h1>
-                    <p>{{Auth::user()->hospitals()->first()->name}}</p>
-                </div>
-            @endif
+        {{dd(['auth' => Auth::user()])}}
+{{--            @if(Auth::user()->hospitals()->count() > 0)--}}
+{{--                <div class="box content">--}}
+{{--                    <h1 class="title">@lang('home.hospital')</h1>--}}
+{{--                    <p>{{Auth::user()->hospitals()->first()->name}}</p>--}}
+{{--                </div>--}}
+{{--            @endif--}}
 {{--            @if(Auth::user()->trials()->count() > 0)--}}
 {{--                <div class="box content">--}}
 {{--                    <h1 class="title">@lang('home.trials')</h1>--}}
