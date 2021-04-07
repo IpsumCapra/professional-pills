@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Route;
 
 // TODO: API auth separation using x509.
 
+Route::middleware('auth.api:md')->get('test', function () {
+    dd("It works!");
+});
+
 // MD routes
 Route::get('patients', [ApiPatientController::class, 'index'])->middleware('auth.api:md');
 Route::get('patients/{patient}', [ApiPatientController::class, 'show']);
