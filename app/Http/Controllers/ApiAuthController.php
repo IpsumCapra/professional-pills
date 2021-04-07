@@ -11,21 +11,36 @@ class ApiAuthController extends Controller
     // Login route
     public function login(Request $request)
     {
-        dd($request);
         $division = $request->server('REDIRECT_SSL_CLIENT_S_DN_CN');
+        $email = $request->server('REDIRECT_SSL_CLIENT_S_DN_Email');
 
-
+        if ($email === null) {
+            return back()->withInput()->with('error', __('auth.login.error'));
+        }
 
         switch ($division) {
             case 'MD':
-
+                $ability = 'md';
+                break;
+            case 'LG':
+                $ability = 'logistics';
+                break;
+            case 'RD':
+                $ability = 'rnd';
+                break;
+            case 'IT':
+                $ability = 'admin';
+                break;
+            default:
+                return back()->withInput()->with('error', __('auth.login.error'));
         }
 
         $user = ApiUser::create([
-
+            'email' => $email,
+            'division' => $division
         ]);
 
-        $token = $user->createToken('auth_token');
+        $token = $user->createToken('auth_token', ['server:' . $ability]);
 
         return ['token' => $token->plainTextToken];
 

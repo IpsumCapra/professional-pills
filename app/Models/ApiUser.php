@@ -13,7 +13,8 @@ class ApiUser extends Authenticatable
     use HasApiTokens, Notifiable;
 
     protected $fillable = [
-        'email'
+        'email',
+        'division'
     ];
 
     /**
