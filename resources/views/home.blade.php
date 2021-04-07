@@ -12,7 +12,7 @@
                     <p>{{Auth::user()->hospitals()->first()->name}}</p>
                 </div>
             @endif
-            @if(Auth::user()->trials()->count() > 0)
+            @if(Auth::user()->trials()->get()->count() > 0)
                 <div class="box content">
                     <h1 class="title">@lang('home.trials')</h1>
                     @foreach(Auth::user()->trials()->toArray() as $trial)
