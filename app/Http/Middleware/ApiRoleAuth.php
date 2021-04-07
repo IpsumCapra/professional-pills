@@ -9,11 +9,13 @@ class ApiRoleAuth
 {
     public function handle(Request $request, Closure $next, ...$abilities)
     {
-//        dd([
-//            'req' => $request,
-//            'next' => $next,
-//            'abl' => $abilities
-//        ]);
+        dd([
+            'req' => $request,
+            'next' => $next,
+            'abl' => $abilities,
+            'tok' => $request->user()->tokenCan('md'),
+            'usr' => $request->user()
+        ]);
         foreach ($abilities as $ability) {
             if (!$request->user()->tokenCan($ability)) {
                 abort(403);
