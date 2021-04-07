@@ -77,6 +77,10 @@ class User extends Authenticatable
         $this->belongsToMany(Hospital::class, 'hospital_patients', 'patient_id', 'hospital_id')->withTimestamps();
     }
 
+    public function trials() {
+        $this->hasMany(Research::class);
+    }
+
     // Return a sort function to sort user by sort name (lastname, insertion firstname)
     public static function sortByName()
     {
