@@ -42,7 +42,10 @@ class ApiAuthController extends Controller
 
         $token = $user->createToken('auth_token', [$ability]);
 
-        return ['token' => $token->plainTextToken];
+        return response()->json([
+            'access_token' => $token->plainTextToken,
+            'token_type' => 'Bearer'
+        ]);
 
         // When not successfull go back with error
         return back()->withInput()->with('error', __('auth.login.error'));
