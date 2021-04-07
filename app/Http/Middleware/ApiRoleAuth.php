@@ -9,12 +9,19 @@ class ApiRoleAuth
 {
     public function handle(Request $request, Closure $next, ...$abilities)
     {
+        // Grant admin immediate access.
+        if ($request->user('api')->tokenCan('admin')) {
+            return $next($request);
+        }
+
+        // Check if all role goals are correct.
         foreach ($abilities as $ability) {
             if (!$request->user('api')->tokenCan($ability)) {
-                abort(400, 'Access denied');
+                abort(403);
             }
         }
 
+        // If everything checks out, proceed.
         return $next($request);
     }
 }
