@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminHospitalsController;
 use App\Http\Controllers\Admin\AdminUsersController;
+use App\Http\Controllers\ApiAuthController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SettingsController;
 use Illuminate\Support\Facades\Route;
@@ -58,5 +59,5 @@ Route::middleware('guest')->group(function () {
 
 // X509 auth routes
 Route::middleware('auth.x509')->group(function () {
-    Route::view('/apiauth/x509/', 'auth.x509.login')->name('auth.x509.login');
+    Route::get('/apiauth/x509/', [ApiAuthController::class, 'login'])->name('auth.x509.login');
 });

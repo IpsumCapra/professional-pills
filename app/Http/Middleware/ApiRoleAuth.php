@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\Request;
 
-class ClientCertificate
+class ApiRoleAuth
 {
     /**
      * Handle an incoming request.
