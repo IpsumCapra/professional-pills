@@ -10,6 +10,7 @@
                 <div class="box content">
                     <h1 class="title">@lang('home.hospital')</h1>
                     <p>{{Auth::user()->hospitals()->first()->name}}</p>
+                    <p>@lang('home.hospital.province', ['hospital.province' => Auth::user()->hospitals()->first()->province])</p>
                 </div>
             @endif
             @if(Auth::user()->trials()->count() > 0)

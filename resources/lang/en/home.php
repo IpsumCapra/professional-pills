@@ -9,6 +9,7 @@ return [
 
     // Hospitals and trials
     'hospital' => 'Assigned hospital',
+    'hospital.province' => 'Province: :hospital.province',
     'trials' => 'Trials',
     'trials.name' => 'Vaccine trial :trial.id',
     'trials.success' => 'SUCCESS',
