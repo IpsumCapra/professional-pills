@@ -8,10 +8,12 @@ use Illuminate\Http\Request;
 
 class ApiHospitalController extends Controller
 {
+    // Show all hospitals.
     public function index() {
-        return Hospital::all()->pagination(config('pagination.api.limit'));
+        return Hospital::all();
     }
 
+    // Show specific hospital.
     public function show(Hospital $hospital) {
         return $hospital;
     }
