@@ -9,12 +9,13 @@ class ApiRoleAuth
 {
     public function handle(Request $request, Closure $next, ...$abilities)
     {
+        abort (403);
         foreach ($abilities as $ability) {
             if (!$request->user()->tokenCan($ability)) {
                 abort(400, 'Access denied');
             }
         }
 
-        return abort(403);
+        abort(403);
     }
 }
