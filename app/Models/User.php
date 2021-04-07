@@ -78,7 +78,7 @@ class User extends Authenticatable
     }
 
     public function trials() {
-        return $this->hasMany(Research::class);
+        return $this->hasMany(Research::class, 'patient_id');
     }
 
     // Return a sort function to sort user by sort name (lastname, insertion firstname)
