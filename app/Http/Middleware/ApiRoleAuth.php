@@ -9,14 +9,20 @@ class ApiRoleAuth
 {
     public function handle(Request $request, Closure $next, ...$abilities)
     {
+        $user = $request->user('api');
+        // Abort if invalid token is used.
+        if ($user === null) {
+            abort(403);
+        }
+
         // Grant admin immediate access.
-        if ($request->user('api')->tokenCan('admin')) {
+        if ($user->tokenCan('admin')) {
             return $next($request);
         }
 
         // Check if all role goals are correct.
         foreach ($abilities as $ability) {
-            if (!$request->user('api')->tokenCan($ability)) {
+            if (!$user->tokenCan($ability)) {
                 abort(403);
             }
         }
