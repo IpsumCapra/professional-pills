@@ -18,7 +18,8 @@ class CreateDeliveriesTable extends Migration
             $table->unsignedBigInteger('destination');
             $table->string('contents');
             $table->unsignedInteger('quantity');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
 
             $table->foreign('destination')
                 ->references('hospital_id')
