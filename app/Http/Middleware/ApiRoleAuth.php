@@ -11,7 +11,7 @@ class ApiRoleAuth
     {
         dd([
             'req' => $request,
-            'usr' => $request->user('api'),
+            'usr' => $request->user(),
             'abl' => $abilities
         ]);
         foreach ($abilities as $ability) {

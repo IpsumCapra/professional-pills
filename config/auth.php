@@ -43,7 +43,7 @@ return [
 
         'api' => [
             'driver' => 'sanctum',
-            'provider' => 'users',
+            'provider' => 'apiusers',
             'hash' => false,
         ],
 
@@ -90,6 +90,11 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
+
+        'apiusers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\ApiUser::class,
+        ]
 
         // 'users' => [
         //     'driver' => 'database',
