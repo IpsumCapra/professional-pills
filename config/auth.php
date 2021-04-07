@@ -46,6 +46,26 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+
+        'md' => [
+            'driver' => 'sanctum',
+            'provider' => 'users'
+        ],
+
+        'logistics' => [
+            'driver' => 'sanctum',
+            'provider' => 'users'
+        ],
+
+        'rnd' => [
+            'driver' => 'sanctum',
+            'provider' => 'users'
+        ],
+
+        'it' => [
+            'driver' => 'sanctum',
+            'provider' => 'users'
+        ]
     ],
 
     /*
