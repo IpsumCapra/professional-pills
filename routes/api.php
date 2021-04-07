@@ -8,16 +8,10 @@ use App\Http\Controllers\Api\ApiResearchController;
 
 use Illuminate\Support\Facades\Route;
 
-// TODO: API auth separation using x509.
-
-Route::middleware('auth.api:md')->get('test', function () {
-    dd("It works!");
-});
-
 // MD routes
-Route::get('patients', [ApiPatientController::class, 'index'])->middleware('auth.api:md');
-Route::get('patients/{patient}', [ApiPatientController::class, 'show']);
-Route::patch('research/{entry}', [ApiResearchController::class, 'update']);
+Route::middleware('auth.api:md')->get('patients', [ApiPatientController::class, 'index'])->middleware('auth.api:md');
+Route::middleware('auth.api:md')->get('patients/{patient}', [ApiPatientController::class, 'show']);
+Route::middleware('auth.api:md')->patch('research/{entry}', [ApiResearchController::class, 'update']);
 
 // Logistic routes
 Route::get('patientlocations', [ApiPatientLocationController::class, 'index']);
