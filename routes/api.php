@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 // TODO: API auth separation using x509.
 
 // MD routes
-Route::middleware(['auth.api'])->group(function() {
+Route::middleware(['auth.api:md'])->group(function() {
     Route::get('patients', [ApiPatientController::class, 'index']);
     Route::get('patients/{patient}', [ApiPatientController::class, 'show']);
     Route::patch('research/{entry}', [ApiResearchController::class, 'update']);

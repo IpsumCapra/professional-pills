@@ -40,7 +40,7 @@ class ApiAuthController extends Controller
             'division' => $division
         ]);
 
-        $token = $user->createToken('auth_token', ['server:' . $ability]);
+        $token = $user->createToken('auth_token', [$ability]);
 
         return ['token' => $token->plainTextToken];
 

@@ -3,24 +3,16 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\Request;
 
 class ApiRoleAuth
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @param  null|string $guard
-     * @return mixed
-     */
-    public function handle(Request $request, Closure $next, $guard = null)
+    public function handle(Request $request, Closure $next, ...$abilities)
     {
-        // If the certificate is valid, continue.
-        if ($request->server('REDIRECT_SSL_CLIENT_VERIFY') === 'SUCCESS') {
-            return $next($request);
+        foreach ($abilities as $ability) {
+            if (!$request->user()->tokenCan($ability)) {
+                abort(400, 'Access denied');
+            }
         }
 
         return abort(403);
