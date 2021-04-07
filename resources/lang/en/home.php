@@ -8,7 +8,7 @@ return [
     'description' => 'You can enter yourself for our vaccination program on this site. We promise to keep your valued information safe! Login or register to continue!',
 
     // Hospitals and trials
-    'hospital' => 'Hospital',
+    'hospital' => 'Assigned hospital',
     'trials' => 'Trials',
     'trials.name' => 'Vaccine trial :trial.id',
     'trials.success' => 'SUCCESS',
