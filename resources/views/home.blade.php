@@ -16,6 +16,7 @@
                 <div class="box content">
                     <h1 class="title">@lang('home.trials')</h1>
                     @foreach(Auth::user()->trials()->get()->toArray() as $trial)
+                        {{dd(['trial' => $trial])}}
                         <div class="box content">
                             <h1 class="title is-spaced is-4">@lang('home.trials.name', ['trial.id' => $trial->id])</h1>
                             @if ($trial->successful === true)
