@@ -6,7 +6,7 @@
     <div class="content">
         @auth
             <h1 class="title">@lang('home.header_auth', ['user.firstname' => Auth::user()->firstname])</h1>
-        {{dd(['auth' => Auth::user()->hospitals()])}}
+        {{dd(['auth' => Auth::user()->hospitals()->first()])}}
 {{--            @if(Auth::user()->hospitals()->count() > 0)--}}
 {{--                <div class="box content">--}}
 {{--                    <h1 class="title">@lang('home.hospital')</h1>--}}
