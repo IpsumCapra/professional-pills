@@ -74,11 +74,11 @@ class User extends Authenticatable
 
     // A user belongs to many hospitals
     public function hospitals() {
-        $this->belongsToMany(Hospital::class, 'hospital_patients', 'patient_id', 'hospital_id')->withTimestamps();
+        return $this->belongsToMany(Hospital::class, 'hospital_patients', 'patient_id', 'hospital_id')->withTimestamps();
     }
 
     public function trials() {
-        $this->hasMany(Research::class);
+        return $this->hasMany(Research::class);
     }
 
     // Return a sort function to sort user by sort name (lastname, insertion firstname)
