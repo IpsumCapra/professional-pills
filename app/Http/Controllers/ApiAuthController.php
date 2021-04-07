@@ -16,7 +16,13 @@ class ApiAuthController extends Controller
     {
         $division = $request->server('REDIRECT_SSL_CLIENT_S_DN_CN');
 
-        $token = $request->user()->createToken('auth_token');
+        switch ($division) {
+            case 'MD':
+
+        }
+
+
+        $token = $user->createToken('auth_token');
 
         return ['token' => $token->plainTextToken];
 

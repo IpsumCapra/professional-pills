@@ -5,11 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasFactory, Notifiable;
 
     // Just a list with all the countries of the world in English
     const PROVINCES = ["Drenthe", "Flevoland", "Friesland", "Gelderland", "Groningen", "Limburg", "Noord-Brabant", "Noord-Holland", "Overijssel", "Utrecht", "Zeeland", "Zuid-Holland"];
@@ -22,9 +21,6 @@ class User extends Authenticatable
     // Several user roles.
     const ROLE_NORMAL = 0;
     const ROLE_ADMIN = 1;
-    const ROLE_MD = 2;
-    const ROLE_LOGISTIC = 3;
-    const ROLE_RND = 4;
 
     /**
      * The attributes that are mass assignable.
