@@ -12,13 +12,11 @@ class ApiRoleAuth
         dd([
             'req' => $request,
             'next' => $next,
-            'abl' => $abilities,
-            'tok' => $request->user()->tokenCan('md'),
-            'usr' => $request->user()
+            'abl' => $abilities
         ]);
         foreach ($abilities as $ability) {
             if (!$request->user()->tokenCan($ability)) {
-                abort(403);
+                abort(400, 'Access denied');
             }
         }
 
