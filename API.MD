@@ -8,7 +8,7 @@ GET. Shows all patients.
 GET. Shows info for one patient.
 <pre>research/{entry}</pre>
 PATCH. Update one research entry. Parameters:
-<pre>{"research_id":id,"successful":0/1}</pre>
+<pre>{"successful":0/1}</pre>
 <h2>Logistics: LG</h2>
 <pre>patientlocations</pre>
 GET. Get all patient locations
