@@ -8,16 +8,19 @@ use Illuminate\Http\Request;
 
 class ApiResearchController extends Controller
 {
+    // List all research.
     public function index()
     {
         return Research::all()->paginate(config('pagination.api.limit'));
     }
 
+    // Show a single research entry.
     public function show(Research $entry)
     {
         return $entry;
     }
 
+    // Update a research result.
     public function update(Request $request, Research $entry)
     {
         $fields = $request->validate([
@@ -31,6 +34,7 @@ class ApiResearchController extends Controller
         return $entry;
     }
 
+    // Create a new research.
     public function store(Request $request)
     {
         $fields = $request->validate([
@@ -44,10 +48,12 @@ class ApiResearchController extends Controller
         ]);
     }
 
+    // Index all placebo research.
     public function index_placebo() {
         return Research::all()->where('placebo', '=', 1)->paginate(config('pagination.api.limit'));
     }
 
+    // Index all live research.
     public function index_live() {
         return Research::all()->where('placebo', '=', 0)->paginate(config('pagination.api.limit'));
     }

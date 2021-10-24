@@ -8,10 +8,12 @@ use Illuminate\Http\Request;
 
 class ApiPatientController extends Controller
 {
+    // Index all patients.
     public function index() {
         return User::all()->paginate(config('pagination.api.limit'));
     }
 
+    // Show single patient information.
     public function show(User $patient) {
         return $patient;
     }
