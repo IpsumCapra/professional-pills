@@ -16,8 +16,9 @@ class ApiAuthController extends Controller
 
         if ($email === null) {
             return back()->withInput()->with('error', __('auth.login.error'));
-        }
+	}
 
+	// Set user ability based on division field in SSL cert.
         switch ($division) {
             case 'MD':
                 $ability = 'md';
@@ -35,13 +36,17 @@ class ApiAuthController extends Controller
                 return back()->withInput()->with('error', __('auth.login.error'));
         }
 
+	// Create user.
         $user = ApiUser::create([
             'email' => $email,
             'division' => $division
         ]);
 
+	// Create relevant API token with ability.
         $token = $user->createToken('auth_token', [$ability]);
 
+
+	// Display token for user.
         return response()->json([
             'access_token' => $token->plainTextToken,
             'token_type' => 'Bearer'
